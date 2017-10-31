@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="smartfe.js" type="text/javascript"></script>
+
+<body>
+  <h2>Stage</h2>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <button ng-click="buttonclick(1)">ServiceCRM 1</button>
+    <button ng-click="buttonclick(2)">ServiceCRM 2</button>
+    <button ng-click="buttonclick(3)">ServiceOracle 1</button>
+    <button ng-click="buttonclick(4)">ServiceOracle 2</button>
+    <button ng-click="buttonclick(5)">MobileMiddleware 1</button>
+    <button ng-click="buttonclick(6)">MobileMiddleware 2</button>
+    <button ng-click="buttonclick(7)">Node1 </button>
+
+
+    <!-- <h1>{{myWelcome}}</h1>
+    <h1>{{nodeResponse}}</h1>
+ 
+ <h1>{{nodeResponseList}}</h1>-->
+    <ul>
+      <li ng-repeat="v in nodeResponseList">{{v}}</li>
+    </ul>
+
+    <h2>Prod</h2>
+    <div ng-controller="myCtrlProd">
+      <button ng-click="buttonclick(1)">ServiceCRM 1</button>
+      <button ng-click="buttonclick(2)">ServiceCRM 2</button>
+      <button ng-click="buttonclick(3)">ServiceOracle 1</button>
+      <button ng-click="buttonclick(4)">ServiceOracle 2</button>
+      <button ng-click="buttonclick(5)">MobileMiddleware 1</button>
+      <button ng-click="buttonclick(6)">MobileMiddleware 2</button>
+      <button ng-click="buttonclick(7)">Node1 </button>
+
+
+      <!-- <h1>{{myWelcome}}</h1>
+    <h1>{{nodeResponse}}</h1>
+ 
+ <h1>{{nodeResponseList}}</h1>-->
+      <!-- <ul>
+    <li ng-repeat="v1 in nodeResponseListP">{{v1}}</li>
+  </ul> -->
+      <div>
+        <ul>
+          <li ng-repeat="v in nodeResponseListP">{{v}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--<p>The $http service requests a <pa> </pa>ge on the server, and the response is set as the value of the "myWelcome" variable.</p>
+-->
+</body>
+
+</html>

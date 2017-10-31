@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <button id="ServiceCRM1">ServiceCRM</button>
+  <button id="2">mobiliemiddleware</button>
+  <button id="3">ServiceOracle</button>
+  <button id="4">ServiceCRM 2</button>
+  <button id="5">mobiliemiddleware 2</button>
+  <button id="6">ServiceOracle 2</button>
+  <p id="view"></p>
+  <p id="view"></p>
+
+  <script>
+    $(document).ready(function () {
+      $("#ServiceCRM1").click(function () {
+        $.ajax({
+          url: 'http://usmkeimobvp1ap1.od.health.ge.com:8080/ServiceCRMAPI/',
+          type: 'GET',
+          success: function (data) {
+            $(data).find('#reviews .card').appendTo('#reviews');
+             APIres = data.status + " " + data.statusText;
+              view.innerHTML = APIres;
+          },
+          error: function (data) {
+            var APIres = {};
+            
+            console.log(data);
+            APIres = data.status + " " + data.statusText;
+            view.innerHTML = APIres;
+            alert('woops! ' + APIres); //or whatever
+          }
+        });
+      });
+    });
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
