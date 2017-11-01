@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
 import { Injectable } from '@angular/core';
-// import { HttpModule, Response } from '@angular/http';
-import { Observable } from 'rxjs';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 @Component({
     selector: 'fe-data',
     templateUrl: './fe.component.html',
-
     styleUrls: ['./fe.component.css']
 })
 
@@ -21,6 +18,17 @@ export class FECompoment {
         // this.http.get(`http://devl-smartfe.cloud.health.ge.com/ServiceOracleAPI/inventory/ping`)
         //     .map((res: Response) => res.json())
         //     .subscribe(people => this.people = people);
+    }
+
+    fetchdata() {
+        console.log("Fetch Data")
+        this.http.get(`http://localhost:9099/ping`)
+            .map((res: Response) => res.json())
+            .subscribe(res => this.people = res);
+
+
+        return this.http.get(`http://localhost:9099/ping`)
+            .map((res: Response) => JSON.stringify(res.json()));
     }
 
     testDev() {
