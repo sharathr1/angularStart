@@ -8,12 +8,15 @@ import { FECompoment } from './fe/fe.component';
 import { RegisterCompoment } from './register/register.component';
 import { RegisterdataFormComponent } from './register/useregisterFormComponent';
 import { FormGroup, FormsModule, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './error/error.component';
 
 const appRoutes: Routes = [
   { path: 'snippet', component: SnippetComponent },
   { path: 'fe', component: FECompoment },
   { path: 'register', component: RegisterCompoment },
-  { path: 'register-form', component: RegisterdataFormComponent }
+  { path: 'register-form', component: RegisterdataFormComponent },
+  { path: '**', component: PageNotFoundComponent },
+  { path: '*', component: AppComponent }
 
 ];
 @NgModule({
@@ -30,6 +33,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     FECompoment,
+    PageNotFoundComponent,
     RegisterdataFormComponent,
     SnippetComponent,
     RegisterCompoment

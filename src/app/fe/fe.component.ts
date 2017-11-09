@@ -11,6 +11,7 @@ import 'rxjs/add/operator/map';
     styleUrls: ['./fe.component.css']
 })
 export class FECompoment {
+
     name: String = 'Sharath';
     lastName: String = 'R';
     cell: Number = 88892772944;
