@@ -2,7 +2,7 @@
   <div class="register-container-left">
     <!-- [hidden]="!submitted" -->
     <div class="user-form-header">
-      <h1>User Form</h1>
+      <div class="page-header"><b> User Form</b></div>
       {{formdata}}
     </div>
     <div *ngIf='errorStatus' class="alert alert-danger">
@@ -18,8 +18,8 @@
         <input type="text" placeholder="first name..." minlength="4" class="form-control" id="name" [(ngModel)]="model.name" name="name">
       </div>
       <div class="form-group">
-        <label for="power">Prof.</label>
-        <input type="text" class="form-control" id="power" [(ngModel)]="model.power" name="power">
+        <label for="phone">Ph. No</label>
+        <input type="text" class="form-control" id="phone" [(ngModel)]="model.phone" name="phone">
       </div>
       <div class="form-group">
         <label for="tech">Tech</label>
@@ -31,7 +31,7 @@
         </div>
       </div>
       <button type="submit " class="btn btn-default " (click)="onSubmit() ">Submit</button>
-      <button type="submit " class="btn btn-default " (click)="next() ">Next</button>
+      <button type="submit " class="btn btn-default " (click)="reset() ">Reset</button>
     </form>
   </div>
   <div class="register-container-right">
@@ -54,4 +54,5 @@
       </table>
     </div>
   </div>
+  <div></div>
 </div>

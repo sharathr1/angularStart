@@ -6,7 +6,7 @@ export class User {
     // public alterEgo?: string
     public id: number;
     public name: string;
-    public power: string;
+    public phone: string;
     public tech: string;
     public alterEgo?: string;
     constructor(

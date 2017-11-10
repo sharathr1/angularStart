@@ -41,8 +41,11 @@ export class RegisterdataFormComponent {
         }
         // debugger;
     }
-    next(model) {
-
+    reset() {
+        console.log("reset");
+        this.formdata = null;
+        this.model = new User();
+        this.errorStatus = false;
     }
     trimStr(as: String) {
         return as.replace(/^\s+|\s+$/g, '');

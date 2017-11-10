@@ -36,7 +36,7 @@
 .user-form {
     width: 1000px;
     margin-left: 5%;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
 }
 
 .user-form-header {
@@ -45,18 +45,34 @@
 }
 
 .table {
-    width: 95%;
+    width: 500px;
     max-width: 100%;
     margin-bottom: 20px;
     margin-top: 23px;
 }
 
+tbody {
+    width: 500px;
+    height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* display: block; */
+}
+
 .alert {
     width: 47%;
-    padding: 11px;
-    margin-bottom: 20px;
+    padding: 4px;
+    margin-bottom: 1 0px;
+    margin-left: 30px;
     border: 1px solid transparent;
     border-radius: 3px;
+}
+
+.page-header {
+    padding-bottom: 2px;
+    border-bottom: 0px solid #eee;
+    margin: 20px 0 7px;
+    text-align: center;
 }
 
 .form-control {
@@ -77,3 +93,6 @@
     -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
+
+
+/*table*/
