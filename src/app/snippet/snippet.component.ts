@@ -9,10 +9,11 @@ import { FECompoment } from '../fe/fe.component';
 })
 export class SnippetComponent {
   title2 = 'Code Snippet';
-  text :any;
-  
+  text: any;
+
   constructor(private fe: FECompoment) {
-  this.text=fe.getFullName();
+    this.text = fe.getFullName();
   }
 
+  /* Now send your form using FormData */
 }

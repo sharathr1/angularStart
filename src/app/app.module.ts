@@ -11,7 +11,8 @@ import { FormGroup, FormsModule, FormControl, Validators, ReactiveFormsModule } 
 import { PageNotFoundComponent } from './error/error.component';
 import { VoterComponent } from './voter/voter.component';
 import { VoteTakerComponent } from './voter/votetaker.component';
-
+/*import { FileUploadComponent } from './file-upload/file-upload.component';
+*/
 const appRoutes: Routes = [
   { path: 'snippet', component: SnippetComponent },
   { path: 'fe', component: FECompoment },
@@ -41,8 +42,7 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     RegisterdataFormComponent,
     SnippetComponent,
-    RegisterCompoment
-  ],
+    RegisterCompoment],
   providers: [],
   bootstrap: [AppComponent]
 })

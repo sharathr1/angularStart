@@ -36,22 +36,24 @@
   </div>
   <div class="register-container-right">
     <div class="container-view-right">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>First Name</th>
-            <th>Tech</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="success" *ngFor='let lst of objList'>
-            <td>{{lst.id}}</td>
-            <td>{{lst.name}}</td>
-            <td>{{lst.tech}}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="register-container-right-table">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>First Name</th>
+              <th>Tech</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="success" *ngFor='let lst of objList'>
+              <td>{{lst.id}}</td>
+              <td>{{lst.name}}</td>
+              <td>{{lst.tech}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
   <div></div>
