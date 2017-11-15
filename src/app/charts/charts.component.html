@@ -1,6 +1,11 @@
-<!--<chart [options]="options"></chart>
--->
-<p>selection from <b>{{from}}</b> to <b>{{to}}</b></p>
-<chart [options]="options" (selection)="onChartSelection($event)"> </chart>
+<div>
+  <div class="align-left">
+    <chart [options]="options2" (selection)="onChartSelection($event)"></chart>
+  </div>
+  <div class="align-left">
+    <p>selection from <b>{{from}}</b> to <b>{{to}}</b></p>
+    <chart [options]="options" (selection)="onChartSelection($event)"> </chart>
+  </div>
+</div>
 <!--<chart [options]="options" (load)="saveInstance($event.context)">
 </chart>-->

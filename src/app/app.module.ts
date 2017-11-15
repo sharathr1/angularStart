@@ -14,18 +14,6 @@ import { VoteTakerComponent } from './voter/votetaker.component';
 import { ChartModule } from 'angular2-highcharts';
 import { ChartComponentApp } from './charts/charts.component';
 
-/*import { FileUploadComponent } from './file-upload/file-upload.component';
-import { ChartComponentApp } from './charts/charts.component';
-*/
-declare var require: any;
-
-export function highchartsFactory() {
-  const hc = require('highcharts');
-  const dd = require('highcharts/modules/drilldown');
-  dd(hc);
-
-  return hc;
-}
 const appRoutes: Routes = [
   { path: 'snippet', component: SnippetComponent },
   { path: 'fe', component: FECompoment },
@@ -37,9 +25,19 @@ const appRoutes: Routes = [
   { path: '*', component: AppComponent }
 
 ];
+export declare var require: any;
+
+export function highchartsFactory() {
+  const hc = require('highcharts');
+  const dd = require('highcharts/modules/drilldown');
+  dd(hc);
+
+  return hc;
+} 
 @NgModule({
   imports: [
     BrowserModule,
+    ChartModule.forRoot(require('highcharts')),
     ChartModule,
     HttpModule,
     FormsModule,
@@ -47,8 +45,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    ),
-    ChartModule.forRoot(require('highcharts'))
+    )
   ],
   declarations: [
     AppComponent,
@@ -63,4 +60,6 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }

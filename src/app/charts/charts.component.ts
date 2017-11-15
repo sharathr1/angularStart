@@ -3,7 +3,9 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 @Component({
     selector: 'simple-chart-example',
-    templateUrl: './charts.component.html'
+    templateUrl: './charts.component.html',
+    styleUrls: ['./charts.component.css']
+
 })
 export class ChartComponentApp {
     series: any;
@@ -16,9 +18,34 @@ export class ChartComponentApp {
                 { name: 'B1', data: [-29.9, 4, -106.4, 0, 10, -100, 120, -29.9, 4, -106.4, 45, 10, -100, 120] }
             ]
         };
+        this.options2 = {
+            chart: {
+                type: 'column', zoomType: 'y'
+            },
 
+            title: {
+                text: 'Column chart with negative values'
+            },
+            xAxis: {
+                categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'John',
+                data: [5, 3, 4, 7, 2]
+            }, {
+                name: 'Jane',
+                data: [2, -2, -3, 2, 1]
+            }, {
+                name: 'Joe',
+                data: [3, 4, 4, -2, 5]
+            }]
+        }
     }
     options: Object;
+    options2: Object;
     from: any;
     to: any;
     onChartSelection(e) {
