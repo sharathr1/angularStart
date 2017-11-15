@@ -20,15 +20,15 @@ export class RegisterdataFormComponent {
     test: Number;
     errorStatus: boolean = false;
     onSubmit(model) {
-        console.log("ID " + this.model.id);
+        console.log("ID " + this.model.user_id);
         //        debugger;
-        if (!isNaN(Number(this.model.id)) && this.trimStr(this.model.id.toString()).length > 0) {
+        if (!isNaN(Number(this.model.user_id)) && this.trimStr(this.model.user_id.toString()).length > 0) {
             this.formdata = JSON.stringify(this.model);
             console.log("submit " + this.formdata);
             this.objList.push(this.model);
             this.objList.sort((a, b) => {
-                if (Number(a.id) < Number(b.id)) return -1;
-                else if (Number(a.id) > Number(b.id)) return 1;
+                if (Number(a.user_id) < Number(b.user_id)) return -1;
+                else if (Number(a.user_id) > Number(b.user_id)) return 1;
                 else return 0;
             });
             this.model = new User();

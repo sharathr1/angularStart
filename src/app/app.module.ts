@@ -25,7 +25,7 @@ const appRoutes: Routes = [
   { path: '*', component: AppComponent }
 
 ];
-export declare var require: any;
+ declare var require: any;
 
 export function highchartsFactory() {
   const hc = require('highcharts');
@@ -55,8 +55,8 @@ export function highchartsFactory() {
     PageNotFoundComponent,
     RegisterdataFormComponent,
     SnippetComponent,
-    ChartComponentApp,
-    RegisterCompoment],
+/*    ChartComponentApp,
+*/    RegisterCompoment],
   providers: [],
   bootstrap: [AppComponent]
 })

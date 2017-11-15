@@ -11,7 +11,7 @@
     <form class="user-form">
       <div class="form-group">
         <label for="userid">ID</label>
-        <input type="text" placeholder="" class="form-control" id="userid" required [(ngModel)]="model.id" name="id">
+        <input type="text" placeholder="" class="form-control" id="userid" required [(ngModel)]="model.user_id" name="id">
       </div>
       <div class="form-group">
         <label for="name">Name</label>
@@ -47,7 +47,7 @@
           </thead>
           <tbody>
             <tr class="success" *ngFor='let lst of objList'>
-              <td>{{lst.id}}</td>
+              <td>{{lst.user_id}}</td>
               <td>{{lst.name}}</td>
               <td>{{lst.tech}}</td>
             </tr>
