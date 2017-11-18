@@ -7,7 +7,6 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
     selector: 'simple-chart-example',
     templateUrl: './charts.component.html',
     styleUrls: ['./charts.component.css']
-
 })
 export class ChartComponentApp {
     series: any;
@@ -22,6 +21,11 @@ export class ChartComponentApp {
     to: any;
     chart: Object;
 
+    ticks = 0;
+    /* ngOnInit(){
+       let timer = Observable.timer(2000,1000);
+       timer.subscribe(t=>this.ticks = t);
+     }*/
     constructor(private http: Http) {
         //this.fetchdata();
         this.fetchdynamicdata();
@@ -70,27 +74,18 @@ export class ChartComponentApp {
 
     fetchdata() {
         console.log("Fetch Data");
+        return this.http.get(`http://localhost:9092/itest/users`)
+            .map((res: Response) => res.json())
+            .subscribe(res => {
+                this.userslist = res;
+                for (var i = 0; i < res.userslist.length; i++) {
+                    this.items.push(res.userslist[i].userScore);
+                }
+                console.log(this.items.length);
+                this.userslist = JSON.stringify(this.userslist);
+            });
 
-        return this.executeHttp('http://localhost:7070/itest/users').flatMap(res => {
-        }).subscribe(res => {
-            this.userslist = res;
-            for (var i = 0; i < res.userslist.length; i++) {
-                this.items.push(res.userslist[i].userScore);
-            }
-            console.log(this.items.length);
-            this.userslist = JSON.stringify(this.userslist);
-        });
 
-        /* return this.http.get(`http://localhost:7070/itest/users`)
-             .map((res: Response) => res.json())
-             .subscribe(res => {
-                 this.userslist = res;
-                 for (var i = 0; i < res.userslist.length; i++) {
-                     this.items.push(res.userslist[i].userScore);
-                 }
-                 console.log(this.items.length);
-                 this.userslist = JSON.stringify(this.userslist);
-             });*/
 
     }
 
@@ -100,6 +95,7 @@ export class ChartComponentApp {
     chartData: boolean;
     fetchdynamicdata() {
         this.fetchdata();
+
         console.log("chart data", JSON.stringify(this.items))
         this.options4 = {
             title: { text: 'Angular Chart1' },
@@ -109,7 +105,9 @@ export class ChartComponentApp {
             ]
         };
     }
-
+    delay(ms: number) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
     fetchdatatest() {
         this.options3 = {
             title: { text: 'Angular Chart' },
@@ -121,7 +119,6 @@ export class ChartComponentApp {
 
 
     }
-
     onChartSelection(e) {
         this.from = e.originalEvent.xAxis[0].min.toFixed(2);
         this.to = e.originalEvent.xAxis[0].max.toFixed(2);
