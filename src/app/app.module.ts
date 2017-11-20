@@ -12,7 +12,8 @@ import { PageNotFoundComponent } from './error/error.component';
 import { VoterComponent } from './voter/voter.component';
 import { VoteTakerComponent } from './voter/votetaker.component';
 import { ChartModule } from 'angular2-highcharts';
-//import { ChartComponentApp } from './charts/charts.component';
+import { Observable } from 'rxjs';
+import { ChartComponentApp } from './charts/charts.component';
 
 const appRoutes: Routes = [
   { path: 'snippet', component: SnippetComponent },
@@ -20,25 +21,22 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterCompoment },
   { path: 'register-form', component: RegisterdataFormComponent },
   { path: 'votetaker', component: VoteTakerComponent },
-  //{ path: 'simple-chart-example', component: ChartComponentApp },
+  { path: 'simple-chart-example', component: ChartComponentApp },
   { path: '**', component: PageNotFoundComponent },
   { path: '*', component: AppComponent }
 
 ];
-// declare var require: any;
-
-// export function highchartsFactory() {
-//   const hc = require('highcharts');
-//   const dd = require('highcharts/modules/drilldown');
-//   dd(hc);
-
-//   return hc;
-// }
+declare var require: any;
+export function highchartsFactory() {
+  const hc = require('highcharts');
+  const dd = require('highcharts/modules/drilldown');
+  dd(hc);
+  return hc;
+}
 @NgModule({
   imports: [
     BrowserModule,
-    //   ChartModule.forRoot(require('highcharts')),
-
+    ChartModule.forRoot(require('highcharts')),
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
@@ -55,7 +53,7 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     RegisterdataFormComponent,
     SnippetComponent,
-    // ChartComponentApp,
+    ChartComponentApp,
     RegisterCompoment],
   providers: [],
   bootstrap: [AppComponent]
