@@ -117,7 +117,7 @@ export class ChartComponentApp implements OnInit {
     //     this.retrieveDataPromise().then(() => { this.chartdata() });
     // }
     fetchdynamicdata() {
-        this.fetchdata();
+        //this.fetchdata();
         // this.chartdata();
         // return Promise.all([this.fetchdata(), this.chartdata()]);
 

@@ -13,50 +13,58 @@ import { VoterComponent } from './voter/voter.component';
 import { VoteTakerComponent } from './voter/votetaker.component';
 import { ChartModule } from 'angular2-highcharts';
 import { Observable } from 'rxjs';
+/*import { PopupModule } from 'ng2-opd-popup';
+*//*import { PopComponentA } from './popup/pop.component';
+*//*import { NguiPopupModule } from '@ngui/popup';
 import { ChartComponentApp } from './charts/charts.component';
-
+import { NguiPopupModule } from '@ngui/popup';
+*/
 const appRoutes: Routes = [
-  { path: 'snippet', component: SnippetComponent },
-  { path: 'fe', component: FECompoment },
-  { path: 'register', component: RegisterCompoment },
-  { path: 'register-form', component: RegisterdataFormComponent },
-  { path: 'votetaker', component: VoteTakerComponent },
-  { path: 'simple-chart-example', component: ChartComponentApp },
-  { path: '**', component: PageNotFoundComponent },
-  { path: '*', component: AppComponent }
+    { path: 'snippet', component: SnippetComponent },
+    { path: 'fe', component: FECompoment },
+    { path: 'register', component: RegisterCompoment },
+    { path: 'register-form', component: RegisterdataFormComponent },
+    { path: 'votetaker', component: VoteTakerComponent },
+    /*  { path: 'simple-chart-example', component: ChartComponentApp },
+    */
+/*    { path: 'popup', component: PopComponent },
+*/    { path: '**', component: PageNotFoundComponent },
+    { path: '*', component: AppComponent }
 
 ];
-declare var require: any;
+/*declare var require: any;
 export function highchartsFactory() {
   const hc = require('highcharts');
   const dd = require('highcharts/modules/drilldown');
   dd(hc);
   return hc;
-}
+}*/
 @NgModule({
-  imports: [
-    BrowserModule,
-    ChartModule.forRoot(require('highcharts')),
-    HttpModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
-  ],
-  declarations: [
-    AppComponent,
-    VoterComponent,
-    VoteTakerComponent,
-    FECompoment,
-    PageNotFoundComponent,
-    RegisterdataFormComponent,
-    SnippetComponent,
-    ChartComponentApp,
-    RegisterCompoment],
-  providers: [],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+/*        PopupModule.forRoot(),
+*//*    ChartModule.forRoot(require('highcharts')),
+*/    HttpModule,
+        FormsModule,
+        ReactiveFormsModule,
+        RouterModule.forRoot(
+            appRoutes,
+            { enableTracing: true } // <-- debugging purposes only
+        )
+    ],
+    declarations: [
+        AppComponent,
+        VoterComponent,
+        VoteTakerComponent,
+        FECompoment,
+        PageNotFoundComponent,
+        RegisterdataFormComponent,
+        SnippetComponent,
+/*        PopComponentA,
+*//*    ChartComponentApp,
+*/    RegisterCompoment],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 
 
